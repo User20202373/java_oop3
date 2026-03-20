@@ -36,11 +36,14 @@ public class MyFileInputStream {
             throw new RuntimeException(e);
         } finally {
             if (in != null) {
-                try { in.close(); }              // finally 안에서 또 try-catch
-                catch (IOException e) { e.printStackTrace(); }
+                try {
+                    in.close();
+                }              // finally 안에서 또 try-catch
+                catch (IOException e) {
+                    e.printStackTrace();
+                }
             }
         }
-
         //주의 : 여기서 in.close() 를 하지 않으면
         //즉, 스트림을 닫지 않으면 파일이 계속 열린 상태로 메모리 누수가 생김.
     }

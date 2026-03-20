@@ -11,7 +11,6 @@ public class MySystemIn {
         System.out.println("알파벳 하나를 쓰고 enter 키를 누르세요");
         int i;
 
-
         try {
             i = System.in.read();
             //주의 : 한글(3바이트)은 처리 불가 -> 깨진 문자나 의미없는 정수값이 출력됨
@@ -21,6 +20,5 @@ public class MySystemIn {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-
     }
 }

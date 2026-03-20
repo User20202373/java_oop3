@@ -31,7 +31,5 @@ public class MyFileOutputSystem {
         //참고: output.txt를 에디터로 열면 텍스트가 보입니다.
         //에디터가 바이트 데이터를 문자로 해석해서 보여주기 때문에
         //FileOutputSystem 으로 바이트를 썻지만, 보여주는 방식은 에티터가 결정 합니다.
-
-
     }
 }

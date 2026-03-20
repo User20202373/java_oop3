@@ -27,7 +27,7 @@ public class ScoreStorage {
             int count = Integer.parseInt(sc.nextLine());
             StringBuffer sb = new StringBuffer();
             for (int i = 0; i < count; i++) {
-                System.out.println(i + "번째 학생 점수 ");
+                System.out.println(i + 1 + "번째 학생 점수 ");
                 //sb에 계속 append() 10 + 20 + 30 +
                 //10 공백 20 공백 30 공백
                 String score = sc.nextLine();

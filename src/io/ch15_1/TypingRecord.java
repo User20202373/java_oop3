@@ -32,7 +32,7 @@ public class TypingRecord {
             int data = 0;
 
             while ((data = fin.read()) != -1) {
-                System.out.println((char) data);
+                System.out.print((char) data);
             }
 
 

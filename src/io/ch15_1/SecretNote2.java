@@ -4,7 +4,7 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.util.Scanner;
 
-public class SecretNote {
+public class SecretNote2 {
 
     public static void main(String[] args) {
 

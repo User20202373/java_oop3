@@ -9,12 +9,11 @@ public class MyFileInputStream2 {
         // 주의 a.txt 파일에서 바이트 단위로 데이터를 읽어서 콘솔에 출력할 예정
         // 한글이 있다면 깨짐 발생
 
-
         try (FileInputStream in = new FileInputStream("a.txt")) {
             // 파일에서 더 이상 읽을 데이터가 없으면 -1을 반환
             int readData; // 한 바이트씩 데이터를 읽을 메모리 공간 선언
 
-            while ( (readData = in.read()) != -1 ) {
+            while ((readData = in.read()) != -1) {
                 System.out.print((char) readData);
             }
 
@@ -25,5 +24,4 @@ public class MyFileInputStream2 {
         // try-with-resource 구문을 사용한다.
 
     } // end of main
-
 } // end of class
