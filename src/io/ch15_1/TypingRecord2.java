@@ -39,6 +39,7 @@ public class TypingRecord2 {
                 // 출력할 때 만약 \n(개행문자) 이 들어온다면 카운트를 1씩 올리겠다
                 if ((char) data == '\n') {
                     //개행 문자 (\n) 만났다 == 한 줄이 끝났다
+                    System.out.println(lineNumber+ "번 기록: " + sb.toString());
                     lineNumber++;
                 } else {
                     //개행문자(\n) 아니라면 sb에 계속 이어붙임
@@ -46,8 +47,11 @@ public class TypingRecord2 {
                 }
             }
             //출력할 때 만약 \n(개행문자) 이 들어온다면 카운트를 1씩 올린다
-            System.out.println("\n" + sb.toString());
-            System.out.println("총 " + lineNumber + "개의 기록이 있습니다");
+            if (sb.length() > 0) {
+                System.out.println(lineNumber + "번 기록: " + sb.toString());
+                lineNumber++;
+            }
+            System.out.println("총 " + (lineNumber -1) + "개의 기록이 있습니다");
         }
     }
 
