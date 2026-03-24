@@ -9,8 +9,6 @@ public class ByteBufferedKeyboardConsole {
 
         //System.in
         //System.out
-
-
         try (BufferedInputStream bis = new BufferedInputStream(System.in);
              BufferedOutputStream bos = new BufferedOutputStream(System.out)) {
 
@@ -18,7 +16,7 @@ public class ByteBufferedKeyboardConsole {
             int bytesRead;
 
             while ((bytesRead = bis.read(buffer)) != -1) {
-                bos.write(buffer,0,bytesRead); // 읽은 만큼만 씀
+                bos.write(buffer, 0, bytesRead); // 읽은 만큼만 씀
             }
 
         } catch (Exception e) {

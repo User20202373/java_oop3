@@ -76,10 +76,10 @@ public class MemberMain {
                 List<Member> findAge = repo.findByAgeRange(max, min);
 
                 System.out.println("결과: ");
-                if (findAge.isEmpty()){
+                if (findAge.isEmpty()) {
                     System.out.println("해당 나이의 회원이 없습니다");
-                }else {
-                    for (Member m : findAge){
+                } else {
+                    for (Member m : findAge) {
                         System.out.println(m);
                     }
                 }
@@ -89,14 +89,13 @@ public class MemberMain {
             } else if (choice.equals("5")) {
                 System.out.print("조회할 이메일 : ");
                 String email = sc.nextLine();
-                List<Member> result = repo.findByEmail(email);
-                if (result.isEmpty()) {
-                    System.out.println("해당 이메일이 없습니다.");
-                } else {
-                    for (Member m : result) {
-                        System.out.println(m);
-                    }
+                Member member = repo.findByEmail(email);
+                if (member != null){
+                    System.out.println("조회 결과 : " + member);
+                }else {
+                    System.out.println("없는 이메일 입니다");
                 }
+
             } else if (choice.equals("6")) {
                 System.out.print("수정할 ID : ");
                 int id = Integer.parseInt(sc.nextLine());

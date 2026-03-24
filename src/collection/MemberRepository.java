@@ -56,31 +56,46 @@ public class MemberRepository {
     }
 
     //도전과제 나이 범위로 검색
+    // 1.전체 순회
     public List<Member> findByAgeRange(int max, int min) {
-        List<Member> findAge = new ArrayList<>();
-        // 전체 순회
-        for (Member member : memberList){
-            if ( member.getAge() >= min && member.getAge() <= max){
-                findAge.add(member);
+        List<Member> findAge = new ArrayList<>(); //3.잠시 어딘가에 저장
+
+        for (Member member : memberList) {
+            if (member.getAge() >= min && member.getAge() <= max) {// 2.전체 순회하면서 만약 조건이 맞다면 즉 max 보다 작거나 같고 min보다 크거나 같다면 true
+                findAge.add(member);//4.전체 순회 종료
             }
         }
-        return findAge;
-        // 전체 순회하면서 만약 조건이 맞다면 즉 max 보다 작거나 같고 min보다 크거나 같다면 true
-        //잠시 어딘가에 저장
-        //전체 순회 종료
-        //결과값 반환
+        return findAge;//5.결과값 반환
+
+
     }
 
     // 이메일로 회원 찾기
-    public List<Member> findByEmail(String email) {
-        List<Member> result = new ArrayList<>();
-        for (Member member : memberList) {
-            if (member.getEmail().equalsIgnoreCase(email)) {
-                result.add(member);
+    // 이메일 하나만 찾으면 됨 (유니크함) 리스트 쓸 필요 x
+
+//    public List<Member> findByEmail(String email) {
+//        List<Member> result = new ArrayList<>();
+//        for (Member member : memberList) {
+//            if (member.getEmail().equalsIgnoreCase(email)) {
+//                result.add(member);
+//            }
+//        }
+//        return result;
+//
+//    }
+
+    public Member findByEmail(String email) {
+        //전체 순회 전에 존재 여부부터 확인 --> 빠르게 존재 여부 확인
+        if (emailSet.contains(email) == false) {
+            return null;
+        }
+
+        for (Member m : memberList) {
+            if (m.getEmail().equalsIgnoreCase(email)){
+                return m;
             }
         }
-        return result;
-
+        return null;
     }
 
     //회원 정보 수정
