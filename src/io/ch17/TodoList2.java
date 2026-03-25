@@ -31,6 +31,7 @@ public class TodoList2 {
             System.out.println("0. 프로그램 종료");
             System.out.print("선택 : ");
             int choice = sc.nextInt();
+            sc.nextLine();
 
             switch (choice) {
                 case ADD_TASK:
@@ -64,12 +65,9 @@ public class TodoList2 {
 
 
     private static void addTask(Scanner sc) {
-        // "[ ] 할 일 내용" 형식으로 지정
-        // [ ] -> 미완료 상태
-        // [V] -> 완료 상태
+
         System.out.print("추가할 할 일을 입력하세요 :");
         String task = sc.nextLine();
-
         try(BufferedWriter bw = new BufferedWriter(new FileWriter(TODO_DIR, true))){
             bw.write("[ ] " + task);
             bw.newLine();

@@ -30,13 +30,11 @@ public class FileCopy {
             }
             System.out.println("파일 복사 완료");
 
-
         } catch (FileNotFoundException e) {
             throw new RuntimeException(e);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-
 
         long endTime = System.nanoTime();
         // 소요 시간 계산
