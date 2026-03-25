@@ -18,28 +18,6 @@ public class User {
     private String website;
     private Address address;
     private Company company;
-
-    @ToString
-    static class Address {
-        private String street;
-        private String suite;
-        private String city;
-        private String zipcode;
-        private Geo geo;
-
-        @ToString
-        class Geo {
-            private double lat;
-            private double lng;
-        }
-    }
-
-    @ToString
-    static class Company {
-        private String name;
-        private String catchPhrase;
-        private String bs;
-    }
 }
 
 

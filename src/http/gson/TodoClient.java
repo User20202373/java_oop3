@@ -17,8 +17,8 @@ public class TodoClient {
         HttpURLConnection connection;
 
         try {
-            URL url = new URL(urlString);
-            connection = (HttpURLConnection) url.openConnection();
+            URL url = new URL(urlString); //문자열 형태의 주소를 실제 URL 객체로 만들고
+            connection = (HttpURLConnection) url.openConnection();//그 URL로 HTTP 연결을 여는 코드
 
             //HTTP 요청 메세지 만들어서 --> 연결 요청
             connection.setRequestMethod("GET");

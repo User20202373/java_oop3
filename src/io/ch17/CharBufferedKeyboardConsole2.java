@@ -15,7 +15,7 @@ public class CharBufferedKeyboardConsole2 {
 //        BufferedWriter bw = new BufferedWriter(pw);
         BufferedWriter bw = new BufferedWriter(new PrintWriter(System.out));
 
-        System.out.println("텍스트 입력 : ");
+        System.out.print("텍스트 입력 : ");
 
         String line;
         while ((line = br.readLine()) != null){

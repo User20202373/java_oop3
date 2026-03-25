@@ -7,19 +7,17 @@ public class CharBufferedKeyboardConsole {
     public static void main(String[] args) throws IOException {
 
         /**
-         * 스트림 체인 구조
+         *  스트림 체인 구조
          *
-         * [키보드]
-         * System.in(InputStream)
-         * InputStreamReader(브릿지)
-         * //버퍼/문자 기반 보조 -> BufferedRead(버퍼 + readLine() 추가)
+         *  [키보드]
+         *       System.in(InputStream)
+         *  InputStreamReader(브릿지)
+         *  BufferedRead (버퍼 + readLine() 추가)
          *
-         * [프로그램] --> 콘솔
-         * BufferedWriter (버퍼 + newLine() 추가)
-         * PrintWriter
-         * System.out(printWriter) - 콘솔창에 출력
-         *
-         *
+         *  [프로그램] --> 콘솔
+         *  BufferedWriter (버퍼 + newLine() 추가)
+         *   PrintWriter
+         *  System.out(PrintWriter) - 콘솔창에 출력
          *
          */
 
@@ -42,5 +40,5 @@ public class CharBufferedKeyboardConsole {
             // \r\n <--- 윈도우
             bw.flush(); // 버퍼에 남은 데이터 즉시 출력
         }
-    }
+    } // end of main
 }
