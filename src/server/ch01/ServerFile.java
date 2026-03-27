@@ -8,25 +8,26 @@ public class ServerFile {
     public static void main(String[] args) {
         //소켓 통신을 하기 위한 서버측 테스트 코드1
         //(내 IP 주소 당연히 알고 있음)
-        // 포트 번호를 열고 클라이언트에 연결 요청을 기다리는 서버 소켓
+        //1. 포트 번호를 열고 클라이언트에 연결 요청을 기다리는 서버 소켓
         //Ip : 192.168.4.21
         try (ServerSocket serverSocket = new ServerSocket(5000)) {
 
             //accept() - 클라이언트가 연결할 때 까지 이 줄에서 멈춤(블로킹)
             Socket clientSocket = serverSocket.accept();
-            //1. 코드가 아래로 안내려감 블로킹)
+            //2. 코드가 아래로 안내려감 블로킹)
             System.out.println("클라이언트가 연결 됐습니다.");
-            //2. 소켓 객체가 생성이 되면 (accept()) 이 소켓이 클라이언트 소켓과 연결되어 있는 소켓
+            //3. 소켓 객체가 생성이 되면 (accept()) 이 소켓이 클라이언트 소켓과 연결되어 있는 소켓
             // I/O 단원에서 배운 체인 그대로
             InputStream input = clientSocket.getInputStream();
             BufferedReader reader = new BufferedReader(new InputStreamReader(input));
 
 
-            //클라이언트가 보낸 한 줄을 읽음
+            //4.클라이언트가 보낸 한 줄을 읽음
             String message = reader.readLine();
             // 내 서버 측 콘솔창에 출력
             System.out.println("클라이언트 메세지 : " + message);
 
+            //5. 통신 종료 ,연결 해제
             clientSocket.close();
 
         } catch (IOException e) {

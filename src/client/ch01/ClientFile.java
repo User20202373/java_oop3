@@ -20,7 +20,6 @@ public class ClientFile {
             //writer.write("Hello ~ Server ~~" + "\n"); //개행문자까지 보내야 정상 보내짐
             writer.println("안녕 반가워");
 
-
         } catch (UnknownHostException e) {
             throw new RuntimeException(e);
         } catch (IOException e) {

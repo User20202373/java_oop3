@@ -26,11 +26,9 @@ public class MultiClientServer {
                 System.out.println("클라이언트 접속. 현재 접속자 " + clientWriterList.size() + " 명");
             }
 
-
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-
 
     }//end of main
 
@@ -87,5 +85,4 @@ public class MultiClientServer {
             }
         }
     }//end of inner ClientHandler
-
 }//end of class

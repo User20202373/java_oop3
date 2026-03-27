@@ -16,7 +16,7 @@ public class ChatClient {
         String name = sc.nextLine();
 
         //강사 ip 주소 : 192.168.4.101
-        try (Socket socket = new Socket("192.168.4.101", 5000)) {
+        try (Socket socket = new Socket("localhost", 5000)) {
 
             System.out.println(name + " 님, 채팅방 입장 했음 (종료 : exit)");
 

@@ -34,9 +34,13 @@ public class ArrayListEx3 {
         System.out.println(book2List.get(1).title);
 
         try {
-            System.out.println(book2List.get(2).title);
+            if (book2List.size() > 2) {
+                System.out.println(book2List.get(2).title);
+            } else {
+                System.out.println("해당 인덱스에는 데이터가 없습니다.");
+            }
         } catch (Exception e) {
-            e.printStackTrace(); // sout
+            e.printStackTrace();
         }
         System.out.println("프로그램 정상 종료");
     } // end of main
