@@ -34,5 +34,4 @@ public class User2 {
         private String catchPhrase;
         private String bs;
     }
-
 }

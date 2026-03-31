@@ -12,10 +12,13 @@ public class UserEx1 {
         User.Address address = user.new Address();
         address.setCity("부산");
         address.setStreet("중앙대로");
+        user.setAddress(address);
 
         User.Address.Geo geo = user.getAddress().new Geo();
         address.setGeo(geo);
         geo.setLat("55.6");
         geo.setLng("112.6");
+
+
     }
 }
